@@ -1,6 +1,9 @@
 # vim_configuration
 some vim plug-in and configred file
 
+## Vundle installation
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 ## PluginList    
 Plugin 'VundleVim/Vundle.vim'    
 Plugin 'vim-scripts/taglist.vim'    
