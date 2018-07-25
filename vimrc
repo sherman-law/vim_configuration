@@ -16,21 +16,22 @@
 
    Plugin 'vim-scripts/taglist.vim'
 
-   Plugin 'nerdtree.vim'
+   Plugin 'scrooloose/nerdtree'
 
-   Plugin 'Tabular.vim'
+   Plugin 'godlygeek/tabular'
 
-   Plugin 'vim-addon-mw-utils.vim'
+   Plugin 'MarcWeber/vim-addon-mw-utils'
 
-   Plugin 'tlib_vim.vim'
+   Plugin 'tomtom/tlib_vim'
 
-   Plugin 'vim-snipmate.vim'
+   Plugin 'garbas/vim-snipmate'
 
-   Plugin 'vim-snippets.vim'
+   Plugin 'honza/vim-snippets'
 
-   Plugin 'vim-easymotion.vim'
+   Plugin 'easymotion/vim-easymotion'
 
-   Plugin 'tagbar.vim'
+   Plugin 'majutsushi/tagbar'
+
    " The following are examples of different formats supported.
    " Keep Plugin commands between vundle#begin/end.
    " plugin on GitHub repo
