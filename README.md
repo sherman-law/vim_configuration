@@ -15,3 +15,8 @@ Plugin 'vim-scripts/taglist.vim'
 [Plugin 'vim-snippets.vim'](https://github.com/honza/vim-snippets.git)    
 [Plugin 'vim-easymotion.vim'](https://github.com/easymotion/vim-easymotion)   
 [Plugin 'tagbar.vim'](https://github.com/majutsushi/tagbar)    
+
+
+## reference
+https://github.com/amix/vimrc
+https://github.com/spf13/spf13-vim
