@@ -14,7 +14,7 @@
    " let Vundle manage Vundle, required
    Plugin 'VundleVim/Vundle.vim'
 
-   Plugin 'vim-scripts/taglist.vim'
+   " Plugin 'vim-scripts/taglist.vim'
 
    Plugin 'scrooloose/nerdtree'
 
@@ -31,6 +31,14 @@
    Plugin 'easymotion/vim-easymotion'
 
    Plugin 'majutsushi/tagbar'
+
+   Plugin 'yggdroot/indentline'
+
+   Plugin 'Yggdroot/vim-mark'
+
+   Plugin 'itchyny/landscape.vim'
+
+   Plugin 'altercation/vim-colors-solarized'
 
    " The following are examples of different formats supported.
    " Keep Plugin commands between vundle#begin/end.
@@ -67,6 +75,14 @@
 "set noai                          " set auto-indenting on for programming
 "set nocin
 "set nosi
+set autoindent
+set cindent
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+set expandtab
+set hlsearch
+set number
 set showmatch                   " automatically show matching brackets. works like it does in bbedit.
 set vb                          " turn on the "visual bell" - which is much quieter than the "audio blink"
 set ruler                       " show the cursor position all the time
@@ -76,10 +92,8 @@ set nocompatible                " vi compatible is LAME
 set background=dark             " Use colours that work well on a dark background (Console is usually black)
 set showmode                    " show the current mode
 set clipboard=unnamed           " set clipboard to unnamed to access the system clipboard under windows
-set tabstop=4
-set softtabstop=4
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1 " set file encoding to support chinese
-set fdm=syntax                                                  " fold method
+" set fdm=syntax                                                  " fold method
 syntax on                                                       " turn syntax highlighting on by default
 
 " Show EOL type and last modified timestamp, right after the filename
@@ -143,3 +157,52 @@ smap <C-J> <Plug>snipMateNextOrTrigger
 
 " tagbar config 
 nmap <F7> :TagbarToggle <CR>
+
+syntax enable 
+set background=dark
+colorscheme solarized
+
+let g:snipMate = { 'snippet_version' : 1 }
+
+if has("cscope")
+	set cscopetag
+	set csto=0
+	set cst
+	set nocsverb
+	" add any database in current directory
+	if filereadable("cscope.out")
+	    cs add cscope.out
+	" else add database pointed to by environment
+	elseif $CSCOPE_DB != ""
+	    cs add $CSCOPE_DB
+	endif
+	set csverb
+endif
+
+nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>a :cs find a <C-R>=expand("<cword>")<CR><CR>
+
+nmap <C-\><C-\>s :vert scs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\><C-\>g :vert scs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\><C-\>c :vert scs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\><C-\>t :vert scs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\><C-\>e :vert scs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\><C-\>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-\><C-\>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\><C-\>a :vert scs find a <C-R>=expand("<cword>")<CR><CR>
+
+let g:indentLine_faster=1
+let g:indentLine_leadingSpaceChar='·'
+let g:indentLine_leadingSpaceEnabled=1
+let g:indentLine_fileTypeExclude=['text']
+let g:indentLine_bufTypeExclude=['help', 'terminal']
+let g:indentLine_conceallevel=2
+let g:indentLine_color_gui='#dc322f'
+let g:indentLine_bgcolor_gui='#FF5F00'
